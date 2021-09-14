@@ -12,12 +12,12 @@ USER_PASSWORD = os.getenv('USER_PASSWORD')
 con = mysql.connector.connect(
     host = 'localhost',
     user = USER_PROFILE,
-    password= USER_PASSWORD,
+    password = USER_PASSWORD,
     database ='insert_database_name',
     port = 3306
     )
 
-print("I might be connected")
+print(con)
 
 # Cursor
 cur = con.cursor()
