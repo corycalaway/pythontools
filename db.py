@@ -48,7 +48,17 @@ print(add_username)
 cur.execute(
     'INSERT INTO user (username, user_item_id, user_rating) VALUES ("{}", {}, {})' .format(add_username, add_user_item, add_user_rating))
 
+
 # Commit connection
+con.commit()
+
+user_to_update = str(input("Enter the username of the user to update. "))
+
+new_rating = int(input("What would you like to update {} rating to. " .format(user_to_update)))
+
+# Update selected user by username to update user rating.
+cur.execute('UPDATE user SET user_rating = {} WHERE username = "{}";' .format(new_rating, user_to_update))
+
 con.commit()
 # Close cursor
 cur.close()  
