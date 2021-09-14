@@ -1,10 +1,17 @@
 import mysql.connector
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+USER_PROFILE = os.getenv('USER_PROFILE')
+USER_PASSWORD = os.getenv('USER_PASSWORD')
 
 # Connecting to a database
 con = mysql.connector.connect(
     host = 'localhost',
-    user = 'root',
-    password = 'ccPOKEMONCC??', 
+    user = USER_PROFILE,
+    password= USER_PASSWORD,
     database ='insert_database_name',
     port = 3306
     )
